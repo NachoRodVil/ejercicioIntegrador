@@ -9,9 +9,9 @@ app.use("/",routes)
 app.use(function (err, req, res, next) {
     console.error(err);
     res.status(err.status || 500).send(err.message);
-});db.sync({ logging: false, force: false })
+});
+db.sync({ logging: false, force: false })
     .then(function () {
-        // asegurate de reemplazar el nombre de abajo con tu app de express
         app.listen(3000, function () {
             console.log('Server is listening on port 3000!');
         });
